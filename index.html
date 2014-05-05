@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <head>
+        <title>Google safe search off bookmarklet</title>
+        <meta charset = "utf-8" />
+        <style type = "text/css">
+            a, p {
+                font-family: sans-serif;
+            }
+            a.bookmarklet {
+                display: block;
+                width: 100px;
+                height: 50px;
+                background-color: #90d7ec;
+                color: white;
+                font-size: 20px;
+                text-decoration: none;
+                text-align: center;
+                line-height: 50px;
+                float: left;
+                margin-top: -15px;
+                border-radius: 4px;
+            }
+            a.bookmarklet:hover,
+            a.bookmarklet:active,
+            a.bookmarklet:focus {
+                background-color: #009ad6;
+            }
+            p {
+                margin-left: 110px;
+                margin-top: 25px;
+                font-size: 16px;
+                color: #464547;
+            }
+        </style>
+    </head>
+    <body>
+        <a class="bookmarklet" href = 'javascript:(function(){var%20changeProp=function(name,value){var%20oldParam=window.location.search;var%20newParam="";var%20reg=new%20RegExp("(^|)"+name+"=([^&]*)(|$)","gi");var%20prop=name+"="+value;if(oldParam){if(oldParam.match(reg)){if(oldParam.match(reg)[0]===prop){return%20false;}newParam=oldParam.replace(oldParam.match(reg)[0],prop);}else{newParam=oldParam+"&"+prop;}}else{newParam="?%22+prop;}window.location.search=newParam;};changeProp(%22safe%22,%22off%22);})();'>
+            Safe Off</a>
+        <p>&lt;-- Drag this button to bookmark bar</p>
+    </body>
+</html>
